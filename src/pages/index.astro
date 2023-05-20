@@ -1,5 +1,6 @@
 ---
-	import navbar from '../components/navbar.astro'
+	import Navbar from '../components/Navbar.astro'
+	const pageTitle = 'Astro Home Page'
 ---
 
 <html lang="en">
@@ -8,14 +9,12 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}}</title>
 	</head>
 	<body>
 	
-<navbar/>	
-
-		<h1>Astro Tutorial</h1>
+	<Navbar/>	
+		<h1>{pageTitle}</h1>
 		<h2>Index.html</h2>
-
 	</body>
 </html>

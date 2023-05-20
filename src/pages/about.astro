@@ -1,5 +1,21 @@
 ---
+		import Navbar from '../components/Navbar.astro'
+		const pageTitle = 'About Page'
+
+		const user = {
+			firstName : "Kevin",
+			country: "Canada",
+			occupation: "Developer",
+			hobbies: ["Working", "Sleeping", "Eating"],
+		}
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
+
 
 <html lang="en">
 	<head>
@@ -7,18 +23,73 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+		<style>
+		*{
+			font-family: monospace;
+			color: #232323;
+			background-color: #ddd;
+		}
+
+		h1{
+			color: #008800;
+			font-family: monospace;
+			font-weight: 600;
+		}
+
+.hobby{
+	color: "green";
+
+}
+		.skill{
+			color: 'red';
+			font-weight: 'bold';
+		}
+
+		</style>
 	</head>
 	<body>
-  <nav>
-  <a href="/">Home</a>
-  <a href="/about"></a>
-  <a href="/blog"></a>
-  </nav>
-		<h1>Astro Tutorial</h1>
+ <Navbar/>
+
+ <div>
+		<h1>{pageTitle}</h1>
 		<h2>about.html</h2>
-    <p>
-    What a tutorial. Some words here.
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusantium laboriosam, soluta suscipit omnis nulla tempora. Incidunt necessitatibus eligendi porro culpa iure mollitia, reiciendis vero numquam recusandae accusamus nulla quas?</p>
+		<p>user: {user.firstName}</p>
+		<p>country: {user.country}</p>
+		<p>occupation: {user.occupation}</p>
+</div>
+
+
+<div>
+	{happy && <p>I am happy.</p>}
+	{finished && <p>I am finished.</p>}
+	{goal === 3 
+		? <p>Yay.</p>
+ 		: <p>Boo.</p>
+	}
+</div>
+
+
+<div>
+		<p>Hobbies</p> 
+		<ul>
+			{user.hobbies.map((hobby) => 
+				<li class='hobby'>{hobby}</li>
+			)}
+		</ul>
+</div>
+
+
+<div>
+		<p>Skills</p> 
+		<ul>
+			{skills.map((skill) => 
+				<li class="skill">{skill}</li>
+				)}
+		</ul>
+</div>
+
+
+
 	</body>
 </html>
