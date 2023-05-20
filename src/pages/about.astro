@@ -14,10 +14,6 @@
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
-const skillColor = 'navy'
-const fontFamily = "consolas"
-const textColor = "#232323"
-const backgroundColor = "#ddd"
 const happy = true;
 const finished = false;
 const goal = 3;
@@ -31,25 +27,7 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontFamily, textColor, backgroundColor}}>
-		*{
-			font-family: var(--fontFamily);
-			color: var(--textColor);
-			background-color: var(--backgroundColor);
-		}
 
-		h1{
-			color: #008800;
-			font-family: monospace;
-			font-weight: 600;
-		}
-
-		.skill{
-			color: var(--skillColor);
-			font-weight: 'bold';
-		}
-
-		</style>
 	</head>
 	<body>
  <Header/>
