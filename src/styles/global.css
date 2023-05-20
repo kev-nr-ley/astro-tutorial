@@ -1,6 +1,7 @@
 html {
   background-color: #f1f5f9;
-  font-family: sans-serif;}
+  font-family: sans-serif;
+}
 
 body {
   margin: 0 auto;
@@ -12,15 +13,21 @@ body {
 footer {
   position: absolute;
   bottom: 0;
-  background: #222;
+  background: #333;
   color: #eee;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: white;
 }
 
 h1 {
