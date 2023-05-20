@@ -1,5 +1,6 @@
 ---
 		import Navbar from '../components/Navbar.astro'
+			import '../styles/global.css'
 		const pageTitle = 'About Page'
 
 		const user = {
@@ -11,6 +12,10 @@
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
+const skillColor = 'navy'
+const fontFamily = "consolas"
+const textColor = "#232323"
+const backgroundColor = "#ddd"
 const happy = true;
 const finished = false;
 const goal = 3;
@@ -24,11 +29,11 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-		<style>
+		<style define:vars={{skillColor, fontFamily, textColor, backgroundColor}}>
 		*{
-			font-family: monospace;
-			color: #232323;
-			background-color: #ddd;
+			font-family: var(--fontFamily);
+			color: var(--textColor);
+			background-color: var(--backgroundColor);
 		}
 
 		h1{
@@ -37,12 +42,8 @@ const goal = 3;
 			font-weight: 600;
 		}
 
-.hobby{
-	color: "green";
-
-}
 		.skill{
-			color: 'red';
+			color: var(--skillColor);
 			font-weight: 'bold';
 		}
 
