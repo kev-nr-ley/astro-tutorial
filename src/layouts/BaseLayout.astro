@@ -1,10 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-const {pageTitle} = Astro.props;
-
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import "@styles/global.scss";
+const { pageTitle } = Astro.props;
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,10 +16,41 @@ const {pageTitle} = Astro.props;
   <body>
     <Header />
     <h1>{pageTitle}</h1>
+    <div class="color-bar">
+      <div class="display-colors color-1"></div>
+      <div class="display-colors color-2"></div>
+      <div class="display-colors color-3"></div>
+      <div class="display-colors color-4"></div>
+      <div class="display-colors color-5"></div>
+    </div>
     <slot />
     <Footer />
+
     <script>
-      import "../scripts/menu.js";
+      const body = document.querySelector("body");
+      const screenHeight = window.innerHeight;
+      const horizontalLines = document.createElement("div");
+      const verticalLines = document.createElement("div");
+
+      horizontalLines.classList.add("horizontal-lines");
+      verticalLines.classList.add("vertical-lines");
+
+      for (let i = 0; i < screenHeight / 24; i++) {
+        const div = document.createElement("div");
+        div.classList.add("horizontal-line");
+        div.style.top = `${i * (screenHeight / 24)}px`;
+        horizontalLines.appendChild(div);
+      }
+
+      for (let i = 0; i < screenHeight / 24; i++) {
+        const div = document.createElement("div");
+        div.classList.add("vertical-line");
+        div.style.left = `${i * (screenHeight / 24)}px`;
+        verticalLines.appendChild(div);
+      }
+
+      body.appendChild(horizontalLines);
+      body.appendChild(verticalLines);
     </script>
   </body>
 </html>

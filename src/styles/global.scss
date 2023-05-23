@@ -1,65 +1,188 @@
-$primary: #1d34bc;
+@import "@styles/fonts.scss";
 
-body {
-  background: red;
-}
-/* nav styles */
-.hamburger {
-  padding-right: 20px;
-  cursor: pointer;
+// Colors -------------------------
+// Define
+$black: #000814;
+$white: #eee;
+
+$palette-1: #ffc300;
+$palette-2: #f77f00;
+$palette-3: #d62828;
+$palette-4: #81b29a;
+$palette-5: #003566;
+
+$palette: (
+  1: #ffc300,
+  2: #f77f00,
+  3: #d62828,
+  4: #81b29a,
+  5: #003566,
+);
+
+.color-bar {
+  display: flex;
+  padding: 0rem 0rem 0.5rem;
+  .display-colors {
+    width: calc(100vw / length($palette));
+    height: 0.1rem;
+  }
+  @each $key, $value in $palette {
+    .color-#{$key} {
+      background: $value;
+    }
+  }
 }
 
-.hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
-}
+// Use
+$link: $palette-4;
+$link-hover: $palette-2;
+$link-active: $palette-2;
+$link-visited: $palette-4;
+$primary: $palette-4;
+$secondary: $palette-5;
 
-.nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
-  display: none;
+$background-dark: $black;
+$background-light: $white;
+
+$text-light: $white;
+$text-dark: $black;
+// --------------------------------
+
+// Transitions --------------------
+$transition-slow: 360ms;
+$transition-medium: 240ms;
+$transition-fast: 120ms;
+// --------------------------------
+
+// Layout -------------------------
+$header-height: 2rem;
+// --------------------------------
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  color: inherit;
+  // border: 1px solid red;
 }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
+img {
+  object-fit: cover;
+}
+body {
+  background: $background-dark;
+  color: $text-light;
+  padding: $header-height 5vw;
+  font-family: consolas;
+  position: relative;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+a {
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  text-align: center;
+  color: $link;
+  transition: color $transition-medium;
+
+  &:hover {
+    color: $link-hover;
+  }
+  &:active {
+    color: $link-active;
+  }
 }
 
-.nav-links a:hover,
-a:focus {
-  background-color: #ff9776;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0.5rem 2rem;
+  background: transparent;
+  height: $header-height;
 }
 
-.expanded {
-  display: unset;
+section {
 }
 
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
+main {
+}
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
+article {
+}
 
-  .hamburger {
-    display: none;
-  }
+aside {
+}
+
+footer {
+  width: 100%;
+  padding: 0.25rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.image {
+  width: clamp(280px, 100%, 100vw);
+  max-height: 50vh;
+}
+
+.blog-post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0rem;
+}
+
+.blog-post-preview {
+  border-radius: 12px;
+}
+
+.horizontal-lines {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.vertical-lines {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.horizontal-line {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background: #ffffff50;
+  margin: 2rem 0rem;
+}
+
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background: #ffffff50;
+  margin: 2rem 0rem;
 }

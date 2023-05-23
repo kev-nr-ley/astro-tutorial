@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import "@styles/post.scss";
+const { title, description, author, imageUrl, imageAlt } = Astro.props;
+let includeImage;
+imageUrl ? (includeImage = true) : (includeImage = false);
+
+const setActive = (e) => {
+  console.log(e.target);
+  const allPreviews = document.querySelectorAll(".blog-post-preview");
+  allPreviews.forEach((preview) => {
+    preview.classList.remove("active");
+  });
+
+  e.target.closest(".blog-post-preview").classList.add("active");
+};
+---
+
+<div class="blog-post-preview header" onclick="setActive()">
+  <img class="image" src={imageUrl} alt={imageAlt} />
+  <div class="image-overlay">
+    <div class="image-background-gradient"></div>
+    <div class="title-author-container">
+      <h2 class="title">{title}</h2>
+      <p class="author"><i>{author}</i></p>
+      <p class="description">
+        {description}
+      </p>
+    </div>
+  </div>
+
+  <slot />
+</div>

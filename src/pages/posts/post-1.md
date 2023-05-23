@@ -1,28 +1,19 @@
 ---
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+title: Sundown In Seoul
+author: Kevin Riley
+description: "Seoul during the sunset is a beautiful sight to behold. The city is alive with activity and the sky is painted with a beautiful array of colors.
+"
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png' 
-    alt: 'The full Astro logo.'
-tags: ["astro", "blogging", "learning in public"]
+  url: "/images/korea-alley.jpg"
+  alt: "Thumbnail of Astro rays."
+pubDate: 2022-07-15
+tags: ["astro", "learning in public", "setbacks", "community"]
 ---
 
-# My First Blog Post
+# What a cool city.
 
-Published on: 2022-07-01
+I love Seoul. It's a beautiful city with so much to do and see. The people are friendly, the food is delicious, and there's always something going on. I've been living here for over two years now and I still find new things to explore every day. It's a great place to live!
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+## Seoul is a city of contrasts.
 
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+It's a city of contrasts. There are skyscrapers and traditional Korean houses, modern shopping malls and street markets, high-end restaurants and food stalls on every corner. You can find anything you want in Seoul!

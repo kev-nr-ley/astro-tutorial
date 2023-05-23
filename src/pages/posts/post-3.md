@@ -1,10 +1,10 @@
 ---
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
-image: 
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "Thumbnail of Astro rays."
+title: Korean Lantern Festival
+author: Kevin Riley
+description: "The Korean Lantern Festival is a celebration of the country's culture and history. It's a time for people to come together and celebrate their heritage, as well as enjoy some delicious food."
+image:
+  url: "/images/korea-lanterns.jpg"
+  alt: "Thumbnail of Astro rays."
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---

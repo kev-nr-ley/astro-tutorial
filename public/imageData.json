@@ -1,0 +1,24 @@
+{
+  "images": {
+    "korea-alley-bw": {
+      "url": "@public/images/korea-alley-bw.jpg",
+      "alt": "Korea Alley",
+      "tags": ["bw", "korea", "alley", "street"]
+    },
+    "korea-alley": {
+      "url": "@public/images/korea-alley.jpg",
+      "alt": "Korea Alley",
+      "tags": ["korea", "alley", "street"]
+    },
+    "korea-business-crates": {
+      "url": "@public/images/korea-business-crates.jpg",
+      "alt": "Korea Business Crates",
+      "tags": ["korea", "business", "crates"]
+    },
+    "korea-city-river": {
+      "url": "@public/images/korea-city-river.jpg",
+      "alt": "Korea City River",
+      "tags": ["korea", "city", "river"]
+    }
+  }
+}
